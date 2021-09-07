@@ -789,6 +789,10 @@ msgid "TodoNav"
 msgstr "ToDo List"
 
 msgctxt "Global"
+msgid "BBShopNav"
+msgstr "BB Shop"
+
+msgctxt "Global"
 msgid "CurrentPassword"
 msgstr "Current password"
 

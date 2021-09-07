@@ -1,7 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+	<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,10 +21,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>	  
+	  
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
   </ItemGroup>
 
@@ -34,6 +36,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\ConfigurationDb\" />
+    <Folder Include="Migrations\ApplicationDb\" />
     <Folder Include="Migrations\LocalizationDb\" />
     <Folder Include="Migrations\TenantStoreDb\" />
     <Folder Include="Migrations\PersistedGrantDb\" />

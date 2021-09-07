@@ -1,4 +1,4 @@
-﻿using BlazorBoilerplate.Constants;
+using BlazorBoilerplate.Constants;
 using BlazorBoilerplate.Infrastructure.AuthorizationDefinitions;
 using BlazorBoilerplate.Infrastructure.Storage;
 using BlazorBoilerplate.Infrastructure.Storage.DataModels;
@@ -178,46 +178,45 @@ namespace BlazorBoilerplate.Storage
             #region BB shopping
             //add category for shopping
             if (!_context.Categories.Any())
-            {
-                _context.Categories.AddRange(
-                    new Categories
-                    {
-                        Name = "Furniture",
-                        Icon = "weekend",
-                        Url = "/shop/categories/furniture",
-                        CreatedById = user.Id,
-                        CreatedOn = DateTime.Now
-                    },
-                    new Categories
-                    {
-                        Name = "Fun",
-                        Icon = "extension",
-                        Url = "/shop/categories/fun",
-                        CreatedById = user.Id,
-                        CreatedOn = DateTime.Now
-                    },
-                    new Categories
-                    {
-                        Name = "Kitchen",
-                        Icon = "kitchen",
-                        Url = "/shop/categories/kitchen",
-                        CreatedById = user.Id,
-                        CreatedOn = DateTime.Now
-                    }
-                );
-            }
+                {
+                    _context.Categories.AddRange(
+                        new Categories
+                        {
+                            Name = "Furniture",
+                            Icon = "weekend",
+                            Url = "/shop/categories/furniture",
+                            CreatedById = user.Id,
+                            CreatedOn = DateTime.Now
+                        },
+                        new Categories
+                        {
+                            Name = "Fun",
+                            Icon = "extension",
+                            Url = "/shop/categories/fun",
+                            CreatedById = user.Id,
+                            CreatedOn = DateTime.Now
+                        },
+                        new Categories
+                        {
+                            Name = "Kitchen",
+                            Icon = "kitchen",
+                            Url = "/shop/categories/kitchen",
+                            CreatedById = user.Id,
+                            CreatedOn = DateTime.Now
+                        }
+                    );
+                }
 
 
-            //add category for shopping
             if (!_context.Products.Any())
             {
                 _context.Products.AddRange(
                     new Product
                     {
-                       Title = "The Hitchhiker's Guide to the Galaxy",
-                       Description  = "The Hitchhiker's Guide to the Galaxy (sometimes referred to as HG2G, HHGTTG, H2G2, or tHGttG) is a comedy science fiction series created by Douglas Adams.",
-                       Image= "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
-                       ViewCount = 0
+                        Title = "The Hitchhiker's Guide to the Galaxy",
+                        Description = "The Hitchhiker's Guide to the Galaxy (sometimes referred to as HG2G, HHGTTG, H2G2, or tHGttG) is a comedy science fiction series created by Douglas Adams.",
+                        Image = "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
+                        ViewCount = 0
                     },
                     new Product
                     {
@@ -258,7 +257,6 @@ namespace BlazorBoilerplate.Storage
             }
 
             #endregion
-
             _context.SaveChanges();
         }
 

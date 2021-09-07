@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -8,6 +8,7 @@
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <GenerateMvcApplicationPartsAssemblyAttributes>false</GenerateMvcApplicationPartsAssemblyAttributes>
     <BlazorWebAssemblyI18NAssemblies>all</BlazorWebAssemblyI18NAssemblies>
+	<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
   </PropertyGroup>
 
   <ItemGroup>

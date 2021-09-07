@@ -1,4 +1,4 @@
-﻿using BlazorBoilerplate.Infrastructure.Storage.DataInterfaces;
+using BlazorBoilerplate.Infrastructure.Storage.DataInterfaces;
 using BlazorBoilerplate.Infrastructure.Storage.DataModels;
 using BlazorBoilerplate.Shared.Interfaces;
 using BlazorBoilerplate.Storage.Configurations;
@@ -25,14 +25,11 @@ namespace BlazorBoilerplate.Storage
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<QueuedEmail> QueuedEmails { get; set; }
         public DbSet<Todo> Todos { get; set; }
-
-        public DbSet<Categories> Categories { get; set; }
-
-        public DbSet<Product> Products { get; set; }
-
         public DbSet<Message> Messages { get; set; }
         private IUserSession UserSession { get; set; }
         public DbSet<DbLog> Logs { get; set; }
+        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         /* We define a default value for TenantInfo. This is a hack. FinBuckle does not provide any method to init TenantInfo or define a default value when seeding the database (in DatabaseInitializer, HttpContext is not yet initialized). */
         public ApplicationDbContext(TenantInfo tenantInfo, DbContextOptions<ApplicationDbContext> options, IUserSession userSession)
@@ -86,6 +83,7 @@ namespace BlazorBoilerplate.Storage
 
             modelBuilder.Entity<Message>().ToTable("Messages");
 
+            modelBuilder.ApplyConfiguration(new MessageConfiguration());
 
             modelBuilder.Entity<Categories>().ToTable("Categories");
             modelBuilder.Entity<Product>(b =>
@@ -93,9 +91,6 @@ namespace BlazorBoilerplate.Storage
                 b.Property(b => b.Image).HasDefaultValue("https://via.placeholder.com/300x300");
                 b.ToTable("Products");
             });
-
-
-            modelBuilder.ApplyConfiguration(new MessageConfiguration());
 
             SetGlobalQueryFilters(modelBuilder);
         }
